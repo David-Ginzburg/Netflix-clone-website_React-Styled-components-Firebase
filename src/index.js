@@ -17,8 +17,6 @@ const config = {
     appId: VITE_APP_ID
 }
 
-const firebase = window.firebase.initializeApp(config)
-
 ReactDOM.render(
     <>
         <FirebaseContext.Provider value={{ firebase: window.firebase }}>
