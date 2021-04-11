@@ -13,7 +13,7 @@ export const Container = styled.section`
     max-width: 450px;
     padding: 60px 68px 40px;
     margin-bottom: 100px;
-`;
+`
 
 export const Error = styled.div`
     background: #e87c03;
@@ -22,34 +22,34 @@ export const Error = styled.div`
     margin: 0 0 16px;
     color: white;
     padding: 15px 20px;
-`;
+`
 
 export const Base = styled.form`
     display: flex;
     flex-direction: column;
     max-width: 450px;
     width: 100%;
-`;
+`
 
 export const Title = styled.h1`
     color: #fff;
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 28px;
-`;
+`
 
 export const Text = styled.h1`
     color: #737373;
     font-size: 16px;
     font-weight: 500;
-`;
+`
 
 export const TextSmall = styled.h2`
     margin-top: 10px;
     font-size: 13px;
     line-height: normal;
     color: #8c8c8c;
-`;
+`
 
 export const Link = styled(ReachRouterLink)`
     color: #fff;
@@ -58,7 +58,7 @@ export const Link = styled(ReachRouterLink)`
     &:hover {
         text-decoration: underline;
     }
-`;
+`
 
 export const Input = styled.input`
     background: #333;
@@ -73,7 +73,7 @@ export const Input = styled.input`
     &:last-of-type {
         margin-bottom: 30px;
     }
-`;
+`
 
 export const Submit = styled.button`
     background: #e50914;
@@ -89,4 +89,4 @@ export const Submit = styled.button`
     &:disabled {
         opacity: 0.5;
     }
-`;
+`

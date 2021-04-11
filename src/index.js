@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 import { GlobalStyles } from './global-styles'
-import { App } from './app';
+import { App } from './app'
 import { FirebaseContext } from './context/firebase'
 
 const { VITE_API_KEY, VITE_APP_ID, VITE_AUTH_DOMAIN, VITE_DATABASE_URL, VITE_MESSAGING_SENDER_ID, VITE_PROJECT_ID, VITE_STORAGE_BUCKET } = import.meta.env
@@ -25,4 +25,4 @@ ReactDOM.render(
         </FirebaseContext.Provider>
     </>,
     document.getElementById('root')
-);
+)

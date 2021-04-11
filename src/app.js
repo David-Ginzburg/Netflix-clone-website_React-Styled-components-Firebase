@@ -1,8 +1,8 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import * as ROUTES from './constants/routes'
-import { Home, Signin, Signup } from './pages'
+import { Home, Signin, Signup, Browse } from './pages'
 
 export function App() {
   return (
@@ -15,12 +15,12 @@ export function App() {
                 <Signup />
             </Route>
             <Route path={ROUTES.BROWSE}>
-                <p>I will be the browse page</p>
+                <Browse />
             </Route>
             <Route path={ROUTES.HOME}>
                 <Home />
             </Route>
         </Switch>
     </Router>
-  );
+  )
 }

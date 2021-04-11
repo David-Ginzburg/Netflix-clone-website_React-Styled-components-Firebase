@@ -11,7 +11,7 @@ export const Container = styled.div`
         flex-direction: column;
         align-items: center;
     }
-`;
+`
 
 export const Input = styled.input`
     max-width: 450px;
@@ -20,7 +20,7 @@ export const Input = styled.input`
     padding: 10px;
     height: 70px;
     box-sizing: border-box;
-`;
+`
 
 export const Button = styled.button`
     display: flex;
@@ -33,6 +33,7 @@ export const Button = styled.button`
     font-size: 26px;
     border: 0;
     cursor: pointer;
+    margin-right: 2em;
 
     img {
         margin-left: 10px;
@@ -52,9 +53,10 @@ export const Button = styled.button`
         height: 50px;
         font-size: 16px;
         margin-top: 20px;
+        margin-right: 0;
         font-weight: bold;
     }
-`;
+`
 
 export const Text = styled.p`
     font-size: 19px;
@@ -65,4 +67,4 @@ export const Text = styled.p`
         font-size: 16px;
         line-height: 22px;
     }
-`;
+`
