@@ -26,7 +26,7 @@ export const Container = styled.div`
     @media (max-width: 1000px) {
         margin: 0 30px;
     }
-`;
+`
 
 export const Link = styled.p`
     color: #fff;
@@ -41,7 +41,7 @@ export const Link = styled.p`
     &:last-of-type {
         margin-right: 0;
     }
-`;
+`
 
 export const ButtonLink = styled(ReachRouterLink)`
     display: block;
@@ -60,7 +60,7 @@ export const ButtonLink = styled(ReachRouterLink)`
     &:hover {
         background: #f40612;
     }
-`;
+`
 
 export const Logo = styled.img`
     height: 32px;
@@ -71,4 +71,4 @@ export const Logo = styled.img`
         height: 45px;
         width: 167px;
     }
-`;
+`

@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
 import { GlobalStyles } from './global-styles'
-import { App } from './app';
+import { App } from './app'
 import { FirebaseContext } from './context/firebase'
 
 const config = {
@@ -24,4 +24,4 @@ ReactDOM.render(
         </FirebaseContext.Provider>
     </>,
     document.getElementById('root')
-);
+)

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.section`
     display: flex;
     border-bottom: 8px solid #222;
-`;
+`
 
 export const Frame = styled.div`
     margin-bottom: 10px;
@@ -16,7 +16,7 @@ export const Inner = styled.div`
     flex-direction: column;
     max-width: 815px;
     margin: auto;
-`;
+`
 
 export const Item = styled.div`
     color: white;
@@ -25,7 +25,7 @@ export const Item = styled.div`
     &:first-of-type {
         margin-top: 3em;
     }
-`;
+`
 
 export const Title = styled.h1`
     font-size: 50px;
@@ -38,7 +38,7 @@ export const Title = styled.h1`
     @media (max-width: 600px) {
         font-size: 35px;
     }
-`;
+`
 
 export const Header = styled.div`
     display: flex;
@@ -66,7 +66,7 @@ export const Header = styled.div`
     @media (max-width: 600px) {
         font-size: 16px;
     }
-`;
+`
 
 export const Body = styled.div`
     box-sizing: border-box;
@@ -84,4 +84,4 @@ export const Body = styled.div`
         font-size: 16px;
         line-height: 22px;
     }
-`;
+`
