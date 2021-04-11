@@ -1,18 +1,18 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 
 import { Header } from '../components'
 import * as ROUTES from '../constants/routes'
-import { FirebaseContext } from '../context/firebase'
+//import { FirebaseContext } from '../context/firebase'
 import SelectProfileContainer from './profiles'
 import FooterContainer from './footer'
 
 export default function BrowseContainer() {
     const [profile, setProfile] = useState({})
     const [category, setCategory] = useState('series')
-    const [loading, setLoading] = useState(true)
+    //const [loading, setLoading] = useState(true)
     const [searchTerm, setSearchTerm] = useState('')
 
-    const { firebase } = useContext(FirebaseContext)
+    //const { firebase } = useContext(FirebaseContext)
 
     const user = {
         displayName: "Karl",
