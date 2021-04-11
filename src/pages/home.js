@@ -1,10 +1,7 @@
 import React from 'react'
 
 import { OptForm, Feature } from '../components'
-import { JumbotronContainer } from '../containers/jumbotron'
-import { FooterContainer } from '../containers/footer'
-import { AccordionContainer } from '../containers/accordion'
-import { HeaderContainer } from '../containers/header'
+import { JumbotronContainer, FooterContainer, AccordionContainer, HeaderContainer } from '../containers'
 
 export default function Home() {
     return (
