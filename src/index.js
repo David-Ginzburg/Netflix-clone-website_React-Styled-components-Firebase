@@ -17,7 +17,7 @@ const config = {
     appId: VITE_APP_ID
 }
 
-export const firebase = window.firebase.initializeApp(config)
+window.firebase.initializeApp(config)
 
 ReactDOM.render(
     <>
