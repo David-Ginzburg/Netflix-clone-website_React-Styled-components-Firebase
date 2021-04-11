@@ -16,7 +16,7 @@ const config = {
     measurementId: "G-C7V454FW4K"
 }
 
-export const firebase = window.firebase.initializeApp(config)
+window.firebase.initializeApp(config)
 
 ReactDOM.render(
     <>
