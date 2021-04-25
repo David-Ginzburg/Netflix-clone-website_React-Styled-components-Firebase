@@ -1,9 +1,10 @@
-import React, { useState, useContext, createContext } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState, useContext, createContext } from 'react'
+import ReactDOM from 'react-dom'
 
 import { Container, Button, Overlay, Inner, Close } from './styles/player'
 
-export const PlayerContext = createContext();
+
+export const PlayerContext = createContext()
 
 export default function Player({ children, ...restProps }) {
     const [showPlayer, setShowPlayer] = useState(false);
@@ -22,7 +23,7 @@ Player.Video = function PlayerVideo({ ...restProps }) {
         ? ReactDOM.createPortal(
             <Overlay onClick={() => setShowPlayer(false)}>
                 <Inner>
-                    <video id="netflix-player" controls>
+                    <video autoPlay loop muted playsInline controls>
                         <source src="/videos/bunny.mp4" type="video/mp4" />
                     </video>
                     <Close />
