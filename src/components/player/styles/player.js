@@ -50,13 +50,14 @@ export const Close = styled.button`
         height: 22px;
         width: 2px;
         background-color: white;
+        transform: rotate(45deg);
     }
     
     &:hover {
-        transform: rotate(45deg);
+        transform: rotate(180deg);
     }
     &:after {
-        transform: rotate(-90deg);
+        transform: rotate(-45deg);
     }
 `
 
