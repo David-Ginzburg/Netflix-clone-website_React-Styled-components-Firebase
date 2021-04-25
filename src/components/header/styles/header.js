@@ -32,9 +32,9 @@ export const Link = styled.p`
     color: #fff;
     background-color: rgba(70, 69, 69, 0.8);
     border-radius: 5px;
-    padding: 1em;
+    padding: 0.5em;
     text-decoration: none;
-    margin-right: 30px;
+    margin-right: 10px;
     font-weight: bold;
     cursor: pointer;
     
@@ -43,6 +43,11 @@ export const Link = styled.p`
     }
     &:last-of-type {
         margin-right: 0;
+    }
+
+    @media (min-width: 1000px) {
+        padding: 1em;
+        margin-right: 30px;
     }
 `
 
@@ -86,6 +91,7 @@ export const Text = styled.p`
     font-size: 22px;
     line-height: normal;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+    margin-left: 5px;
 `
 export const Feature = styled(Container)`
     padding: 150px 0 500px 0;
@@ -160,7 +166,7 @@ export const SearchInput = styled.input`
     width: ${({ active }) => (active === true ? '200px' : '0px')};
 `
 
-export const Picture = styled.button`
+export const Picture = styled.img`
     background: url(${({ src }) => src});
     background-size: contain;
     border: 0;
@@ -174,9 +180,9 @@ export const Dropdown = styled.div`
     position: absolute;
     background-color: black;
     padding: 10px;
-    width: 100px;
+    width: 220px;
     top: 32px;
-    right: 10px;
+    right: 0;
     
     ${Group}:last-of-type ${Link} {
         cursor: pointer;

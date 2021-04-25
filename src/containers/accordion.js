@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Accordion } from '../components'
-import OptFormPage from '../pages/optForm'
+import OptFormLink from '../pages/optForm'
 import faqsData from '../fixtures/faqs.json'
 
 export default function AccordionContainer () {
@@ -16,8 +16,7 @@ export default function AccordionContainer () {
                     </Accordion.Item>
                 ))}
             </Accordion.Frame>
-
-            <OptFormPage />
+            <OptFormLink />
         </Accordion>
     )
 }
