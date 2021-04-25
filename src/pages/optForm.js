@@ -3,12 +3,12 @@ import React, { useState, useContext } from 'react'
 import { OptForm } from '../components'
 import { FirebaseContext } from '../context/firebase'
 
-export default function OptFormPage() {
+export default function OptFormLink() {
     const { firebase } = useContext(FirebaseContext)
     const [emailAddress, setEmailAddress] = useState('')
 
     var actionCodeSettings = {
-        url: 'https://netflix-clone-firebase.netlify.app/',
+        url: 'https://netflix-clone-firebase.netlify.app',
         handleCodeInApp: true
       };
 
@@ -20,7 +20,10 @@ export default function OptFormPage() {
             .sendSignInLinkToEmail(emailAddress, actionCodeSettings)
             .then(() => {
                 window.localStorage.setItem('emailForSignIn', emailAddress);
+                setEmailAddress('')
+                alert('Email successfully sent')
             })
+            .catch(err => alert(err))
     }
 
     return (
