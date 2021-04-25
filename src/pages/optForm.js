@@ -8,7 +8,7 @@ export default function OptFormPage() {
     const [emailAddress, setEmailAddress] = useState('')
 
     var actionCodeSettings = {
-        url: 'https://netflix-clone-firebase.netlify.app/browse',
+        url: 'https://netflix-clone-firebase.netlify.app/',
         handleCodeInApp: true
       };
 
