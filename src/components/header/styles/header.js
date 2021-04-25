@@ -30,13 +30,16 @@ export const Container = styled.div`
 
 export const Link = styled.p`
     color: #fff;
+    background-color: rgba(70, 69, 69, 0.8);
+    border-radius: 5px;
+    padding: 1em;
     text-decoration: none;
     margin-right: 30px;
-    font-weight: ${({ active }) => (active === 'true' ? '700' : 'normal')};
+    font-weight: bold;
     cursor: pointer;
     
     &:hover {
-        font-weight: bold;
+        background-color: rgba(70, 70, 70, 0.9);
     }
     &:last-of-type {
         margin-right: 0;

@@ -136,7 +136,8 @@ export const Feature = styled.div`
     background: url(${({ src }) => src});
     background-size: contain;
     position: relative;
-    height: 360px;
+    height: 500px;
+    margin-top: 3em;
     background-position-x: right;
     background-repeat: no-repeat;
     background-color: black;
@@ -168,6 +169,7 @@ export const FeatureClose = styled.button`
     cursor: pointer;
     background-color: transparent;
     border: 0;
+    outline: none;
     
     img {
         filter: brightness(0) invert(1);

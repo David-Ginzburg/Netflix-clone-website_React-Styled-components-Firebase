@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import * as ROUTES from './constants/routes'
 import { Home, Signin, Signup, Browse } from './pages'
@@ -12,16 +12,16 @@ export function App() {
   return (
     <Router>
         <Switch>
-            <IsUserRedirect user={user} loggedInPath={ROUTES.SIGN_IN} path={ROUTES.SIGN_IN}>
+            <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.SIGN_IN}>
                 <Signin />
             </IsUserRedirect>
-            <IsUserRedirect user={user} loggedInPath={ROUTES.SIGN_UP} path={ROUTES.SIGN_UP}>
+            <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.SIGN_UP}>
                 <Signup />
             </IsUserRedirect>
             <ProtectedRoute user={user} path={ROUTES.BROWSE}>
                 <Browse />
             </ProtectedRoute>
-            <IsUserRedirect user={user} loggedInPath={ROUTES.HOME} path={ROUTES.HOME}>
+            <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.HOME}>
                 <Home />
             </IsUserRedirect>
         </Switch>
