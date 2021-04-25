@@ -14,6 +14,11 @@ export const Container = styled.div`
     flex-direction: column;
     margin-bottom: 50px;
     box-sizing: border-box;
+
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
     
     > ${Title} {
         @media (max-width: 1000px) {
@@ -60,6 +65,7 @@ export const Text = styled.p`
 `
 
 export const Entities = styled.div`
+    background-color: rgba(70, 70, 70, 0.8);
     display: flex;
     flex-direction: row;
 `
@@ -91,8 +97,12 @@ export const Item = styled.div`
     transition: transform 0.2;
     
     &:hover {
-        transform: scale(1.3);
+        transform: scale(1.1);
         z-index: 99;
+
+        @media (min-width: 1000px) {
+            transform: scale(1.3);
+        }
     }
     
     @media (min-width: 1000px) {
@@ -125,7 +135,8 @@ export const FeatureText = styled.p`
     font-weight: ${({ fontWeight }) => (fontWeight === 'bold' ? 'bold' : 'normal')};
     margin: 0;
     
-    @media (max-width: 800px) {
+    @media (max-width: 1000px) {
+        background-color: rgba(70, 70, 70, 0.5);
         line-height: 22px;
     }
 `
@@ -145,6 +156,7 @@ export const Feature = styled.div`
     @media (max-width: 1000px) {
         height: auto;
         background-size: auto;
+        background-position: center;
         
         ${Title} {
             font-size: 20px;
@@ -159,6 +171,11 @@ export const Feature = styled.div`
 
 export const FeatureTitle = styled(Title)`
     margin-left: 0;
+
+    @media (max-width: 1000px) {
+        background-color: rgba(70, 70, 70, 0.5);
+        line-height: 22px;
+    }
 `
 
 export const FeatureClose = styled.button`

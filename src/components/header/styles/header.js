@@ -30,7 +30,7 @@ export const Container = styled.div`
 
 export const Link = styled.p`
     color: #fff;
-    background-color: rgba(70, 69, 69, 0.8);
+    background-color: rgba(70, 70, 70, 0.8);
     border-radius: 5px;
     padding: 0.5em;
     text-decoration: none;
