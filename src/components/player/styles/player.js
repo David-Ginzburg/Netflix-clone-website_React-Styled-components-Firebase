@@ -12,20 +12,21 @@ export const Overlay = styled.div`
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    margin: 0 20px;
-`;
+`
 
 export const Inner = styled.div`
     position: relative;
-    width: 100%;
-    max-width: 900px;
+    width: 90%;
     margin: auto;
     
     video {
         height: 100%;
         width: 100%;
     }
-`;
+    @media (min-width: 900px) {
+        width: 50%;
+    }
+`
 
 export const Close = styled.button`
     position: absolute;
@@ -38,6 +39,7 @@ export const Close = styled.button`
     border: 0;
     cursor: pointer;
     transition: all 0.2s;
+    outline: none;
 
     &:before,
     &:after {
@@ -56,7 +58,7 @@ export const Close = styled.button`
     &:after {
         transform: rotate(-90deg);
     }
-`;
+`
 
 export const Button = styled.button`
     background-color: #e50914;
@@ -78,4 +80,4 @@ export const Button = styled.button`
         transform: scale(1.05);
         background-color: #ff0a16;
     }
-`;
+`

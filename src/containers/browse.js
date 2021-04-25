@@ -6,6 +6,7 @@ import * as ROUTES from '../constants/routes'
 import { FirebaseContext } from '../context/firebase'
 import SelectProfileContainer from './profiles'
 import FooterContainer from './footer'
+import useAuthListener from '../hooks/useAuthListener'
 
 export default function BrowseContainer({ slides }) {
     const [profile, setProfile] = useState({})
@@ -15,10 +16,11 @@ export default function BrowseContainer({ slides }) {
     const [slideRows, setSlideRows] = useState([])
 
     const { firebase } = useContext(FirebaseContext)
+    const { displayName = '', photoURL = '' } = useAuthListener().user
 
     const user = {
-        displayName: "Karl",
-        photoURL: "1"
+        displayName,
+        photoURL
     }
 
     useEffect(() => {
@@ -70,7 +72,7 @@ export default function BrowseContainer({ slides }) {
                             <Header.Dropdown>
                                 <Header.Group>
                                     <Header.Picture src={user.photoURL} />
-                                    <Header.Link>{user.displayName}</Header.Link>
+                                    <Header.Text>{user.displayName}</Header.Text>
                                 </Header.Group>
                                 <Header.Group>
                                     <Header.Link onClick={() => firebase.auth().signOut()}>
@@ -88,7 +90,10 @@ export default function BrowseContainer({ slides }) {
                     City. Arthur wears two masks -- the one he paints for his day job as a clown, and the guise he projects in a
                     futile attempt to feel like he's part of the world around him.
                     </Header.Text>
-                    <Header.PlayButton>Play</Header.PlayButton>
+                    <Player>
+                        <Player.Button />
+                        <Player.Video />
+                    </Player>
                 </Header.Feature>
             </Header>
 
