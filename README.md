@@ -1,1 +1,1 @@
-Deployed project: https://netflix-clone-fire.netlify.app/
+Deployed project: https://netflix-clone-firebase.netlify.app/
