@@ -21,11 +21,10 @@ import {
 const FeatureContext = createContext()
 
 export default function Card({ children, ...restProps }) {
-    const [showFeature, setShowFeature] = useState(false)
     const [itemFeature, setItemFeature] = useState(false)
-    
+
     return (
-      <FeatureContext.Provider value={{ showFeature, setShowFeature, itemFeature, setItemFeature }}>
+      <FeatureContext.Provider value={{ itemFeature, setItemFeature }}>
         <Container {...restProps}>{children}</Container>
       </FeatureContext.Provider>
     )
@@ -56,14 +55,14 @@ Card.Meta = function CardMeta({ children, ...restProps }) {
 }
 
 Card.Item = function CardItem({ item, children, ...restProps }) {
-    const { setShowFeature, setItemFeature } = useContext(FeatureContext)
-    
+    const { setItemFeature, itemFeature } = useContext(FeatureContext)
+
     return (
         <Item
             onClick={() => {
                 setItemFeature(item)
-                setShowFeature(true)
             }}
+            isActive={itemFeature?.docId === item.docId}
             {...restProps}
         >
             {children}
@@ -76,14 +75,14 @@ Card.Image = function CardImage({ ...restProps }) {
 }
 
 Card.Feature = function CardFeature({ children, category, ...restProps }) {
-    const { showFeature, itemFeature, setShowFeature } = useContext(FeatureContext);
+    const { itemFeature, setItemFeature } = useContext(FeatureContext);
     
-    return showFeature ? (
+    return itemFeature ? (
         <Feature src={`/images/${category}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`}>
             <Content>
                 <FeatureTitle>{itemFeature.title}</FeatureTitle>
                 <FeatureText>{itemFeature.description}</FeatureText>
-                <FeatureClose onClick={() => setShowFeature(false)}>
+                <FeatureClose onClick={() => setItemFeature(null)}>
                     <img src="/images/icons/close.png" alt="Close" />
                 </FeatureClose>
                 
