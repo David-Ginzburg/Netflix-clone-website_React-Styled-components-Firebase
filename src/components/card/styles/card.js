@@ -65,9 +65,21 @@ export const Text = styled.p`
 `
 
 export const Entities = styled.div`
-    background-color: rgba(70, 70, 70, 0.8);
     display: flex;
     flex-direction: row;
+    overflow-x: auto;
+    padding: 1.6em 0;
+    margin: 1.5em 0;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 172px;
+        background-color: rgba(70, 70, 70, 0.8);
+        position: absolute;
+        top: 26px;
+    }
 `
 
 export const Meta = styled.div`
@@ -81,7 +93,7 @@ export const Meta = styled.div`
 export const Image = styled.img`
     border: 0;
     width: 100%;
-    max-width: 305px;
+    width: 305px;
     cursor: pointer;
     height: auto;
     padding: 0;
@@ -95,15 +107,15 @@ export const Item = styled.div`
     position: relative;
     cursor: pointer;
     transition: transform 0.2;
-    
-    &:hover {
+
+    ${({ isActive }) => isActive && `
         transform: scale(1.1);
         z-index: 99;
 
         @media (min-width: 1000px) {
             transform: scale(1.3);
         }
-    }
+    `};
     
     @media (min-width: 1000px) {
         &:hover ${Meta}, &:hover ${Text}, &:hover ${SubTitle} {
@@ -145,17 +157,15 @@ export const Feature = styled.div`
     display: flex;
     flex-direction: row;
     background: url(${({ src }) => src});
-    background-size: contain;
     position: relative;
     height: 500px;
-    margin-top: 3em;
     background-position-x: right;
     background-repeat: no-repeat;
     background-color: black;
     
     @media (max-width: 1000px) {
         height: auto;
-        background-size: auto;
+        background-size: cover;
         background-position: center;
         
         ${Title} {
