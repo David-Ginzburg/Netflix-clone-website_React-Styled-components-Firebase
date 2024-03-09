@@ -5,6 +5,9 @@ import { GlobalStyles } from './global-styles'
 import { App } from './app'
 import { FirebaseContext } from './context/firebase'
 
+import "firebase/compat/auth";
+import compatApp from "firebase/compat/app";
+
 const { VITE_API_KEY, VITE_APP_ID, VITE_AUTH_DOMAIN, VITE_DATABASE_URL, VITE_MESSAGING_SENDER_ID, VITE_PROJECT_ID, VITE_STORAGE_BUCKET } = import.meta.env
 
 const config = {
@@ -17,11 +20,11 @@ const config = {
     appId: VITE_APP_ID
 }
 
-window.firebase.initializeApp(config)
+const app = compatApp.initializeApp(config);
 
 ReactDOM.render(
     <>
-        <FirebaseContext.Provider value={{ firebase: window.firebase }}>
+        <FirebaseContext.Provider value={{ firebase: app }}>
             <GlobalStyles />
             <App />
         </FirebaseContext.Provider>
