@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import { BrowserRouter as Router, Switch } from 'react-router-dom'
 
 import * as ROUTES from './constants/routes'
-import { Home, Signin, Signup, Browse } from './pages'
+const Home = lazy(() => import('./pages/home'))
+const Signin = lazy(() => import('./pages/signin'))
+const Signup = lazy(() => import('./pages/signup'))
+const Browse = lazy(() => import('./pages/browse'))
+
 import { useAuthListener } from './hooks'
 import { IsUserRedirect, ProtectedRoute } from './helpers/routes'
+import { Loading } from './components'
 
 export function App() {
     const { user } = useAuthListener()
@@ -12,18 +17,20 @@ export function App() {
   return (
     <Router>
         <Switch>
-            <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.SIGN_IN}>
-                <Signin />
-            </IsUserRedirect>
-            <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.SIGN_UP}>
-                <Signup />
-            </IsUserRedirect>
-            <ProtectedRoute user={user} path={ROUTES.BROWSE}>
-                <Browse />
-            </ProtectedRoute>
-            <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.HOME}>
-                <Home />
-            </IsUserRedirect>
+            <Suspense fallback={<Loading src={user.photoURL} />}>
+                <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.SIGN_IN}>
+                    <Signin />
+                </IsUserRedirect>
+                <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.SIGN_UP}>
+                    <Signup />
+                </IsUserRedirect>
+                <ProtectedRoute user={user} path={ROUTES.BROWSE}>
+                    <Browse />
+                </ProtectedRoute>
+                <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.HOME}>
+                    <Home />
+                </IsUserRedirect>
+            </Suspense>
         </Switch>
     </Router>
   )
