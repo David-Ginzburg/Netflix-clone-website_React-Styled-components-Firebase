@@ -17,7 +17,7 @@ export function App() {
   return (
     <Router>
         <Switch>
-            <Suspense fallback={<Loading src={user.photoURL} />}>
+            <Suspense fallback={<Loading src={user ? user?.photoURL : "Loading..."} />}>
                 <IsUserRedirect user={user} loggedInPath={ROUTES.BROWSE} path={ROUTES.SIGN_IN}>
                     <Signin />
                 </IsUserRedirect>
